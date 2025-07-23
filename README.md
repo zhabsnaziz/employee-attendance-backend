@@ -28,6 +28,7 @@ employee-attendance-backend/
 ├── .env
 ├── composer.json
 ├── README.md
+├── employee-attendance.postman_collection.json
 └── ...
 ```
 
@@ -80,6 +81,19 @@ php artisan serve
 |-------|-----------|
 | 1     | Clock In  |
 | 2     | Clock Out |
+
+---
+
+## 📄 Postman Collection
+
+File `employee-attendance.postman_collection.json` telah disertakan di dalam repository ini untuk memudahkan pengujian API.
+
+### Cara Menggunakan:
+
+1. Buka Postman.
+2. Klik **Import** > **Upload Files**.
+3. Pilih file: `employee-attendance.postman_collection.json`.
+4. Jalankan semua request sesuai endpoint.
 
 ---
 
