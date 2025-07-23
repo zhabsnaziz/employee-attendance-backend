@@ -108,7 +108,7 @@ File `employee-attendance.postman_collection.json` telah disertakan di dalam rep
 
 ## 📄 Info Tambahan
 
-- Laravel 20.x
+- Laravel 12.x
 - PHP >= 8.2
 - DB: MySQL
 
