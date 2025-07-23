@@ -1,0 +1,187 @@
+{
+  "info": {
+    "name": "Employee Attendance API",
+    "_postman_id": "a01191b5-8351-4f40-9dc2-58ebee86fd10",
+    "description": "API Collection for Employee Attendance System (Full CRUD)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Departments",
+      "item": [
+        {
+          "name": "GET All Departments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/departments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departments"]
+            }
+          }
+        },
+        {
+          "name": "POST Create Department",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"department_name\": \"IT\",\n  \"max_clock_in_time\": \"08:00:00\",\n  \"max_clock_out_time\": \"17:00:00\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/departments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departments"]
+            }
+          }
+        },
+        {
+          "name": "PUT Update Department",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"department_name\": \"Updated IT\",\n  \"max_clock_in_time\": \"08:30:00\",\n  \"max_clock_out_time\": \"17:30:00\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/departments/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departments", "1"]
+            }
+          }
+        },
+        {
+          "name": "DELETE Department",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/departments/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departments", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "GET All Employees",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/employees",
+              "host": ["{{base_url}}"],
+              "path": ["api", "employees"]
+            }
+          }
+        },
+        {
+          "name": "POST Create Employee",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_id\": \"EMP001\",\n  \"name\": \"Zein Habsin\",\n  \"address\": \"Bogor\",\n  \"departement_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/employees",
+              "host": ["{{base_url}}"],
+              "path": ["api", "employees"]
+            }
+          }
+        },
+        {
+          "name": "PUT Update Employee",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_id\": \"EMP001\",\n  \"name\": \"Zein Updated\",\n  \"address\": \"Jakarta\",\n  \"departement_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/employees/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "employees", "1"]
+            }
+          }
+        },
+        {
+          "name": "DELETE Employee",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/employees/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "employees", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Attendance",
+      "item": [
+        {
+          "name": "POST Clock In",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_id\": \"EMP001\",\n  \"description\": \"Masuk kerja\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/attendance/clock-in",
+              "host": ["{{base_url}}"],
+              "path": ["api", "attendance", "clock-in"]
+            }
+          }
+        },
+        {
+          "name": "PUT Clock Out",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_id\": \"EMP001\",\n  \"description\": \"Pulang kerja\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/attendance/clock-out",
+              "host": ["{{base_url}}"],
+              "path": ["api", "attendance", "clock-out"]
+            }
+          }
+        },
+        {
+          "name": "GET Attendance Logs",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/attendance/logs?start_date=2025-07-01&end_date=2025-07-31&department_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "attendance", "logs"],
+              "query": [
+                { "key": "start_date", "value": "2025-07-01" },
+                { "key": "end_date", "value": "2025-07-31" },
+                { "key": "department_id", "value": "1" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}
