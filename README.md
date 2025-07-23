@@ -102,7 +102,7 @@ File `employee-attendance.postman_collection.json` telah disertakan di dalam rep
 - Validasi input menggunakan Validator
 - Response JSON konsisten
 - Proteksi error dan status code
-- autoincrement (integer) untuk `attendance_id`, format custom string (EMP001) untuk `employee_id`
+- Autoincrement (integer) untuk `attendance_id`, format custom string (EMP001) untuk `employee_id`
 
 ---
 
